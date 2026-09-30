@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Zohaib AI Studio | AI Video Services & Courses</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #080812;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8, 8, 18, 0.95);
+      border-bottom: 1px solid #24243a;
+      padding: 15px 5%;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #8b5cf6;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #a78bfa;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      background:
+        radial-gradient(circle at top, #27204c 0%, #080812 50%);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #171329;
+      border: 1px solid #6d28d9;
+      color: #c4b5fd;
+      padding: 8px 18px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 8vw, 75px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, #8b5cf6, #ec4899);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: #c4c4d4;
+      font-size: 18px;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 5px;
+      transition: .3s;
+    }
+
+    .primary {
+      background: #7c3aed;
+      color: white;
+    }
+
+    .primary:hover {
+      background: #6d28d9;
+      transform: translateY(-2px);
+    }
+
+    .secondary {
+      border: 1px solid #44445d;
+      color: white;
+    }
+
+    .secondary:hover {
+      border-color: #8b5cf6;
+    }
+
+    section {
+      padding: 80px 5%;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #aaaabd;
+      margin-bottom: 45px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #11111f;
+      border: 1px solid #25253b;
+      border-radius: 18px;
+      padding: 30px;
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #7c3aed;
+    }
+
+    .icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #aaaabd;
+    }
+
+    .price {
+      font-size: 35px;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #c4b5fd;
+    }
+
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .portfolio-box {
+      height: 230px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #22134d, #101020);
+      border: 1px solid #292943;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .about {
+      background: #0d0d19;
+    }
+
+    .about-content {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-content p {
+      color: #b7b7c8;
+      font-size: 17px;
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      background: #11111f;
+      border: 1px solid #292943;
+      border-radius: 20px;
+      padding: 40px 25px;
+    }
+
+    .whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    footer {
+      border-top: 1px solid #25253a;
+      text-align: center;
+      padding: 25px;
+      color: #888899;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 6px;
+      }
+
+      .cards,
+      .portfolio {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 20px;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <nav>
+      <div class="logo">Zohaib AI Studio</div>
+
+      <div>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#course">Course</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <div class="badge">🤖 AI Video Creator & Trainer</div>
+
+      <h1>
+        Create Amazing
+        <span class="gradient">AI Videos</span>
+      </h1>
+
+      <p>
+        میں AI کی مدد سے جدید اور پروفیشنل ویڈیوز بناتا ہوں
+        اور لوگوں کو AI Video Creation سکھاتا ہوں۔
+      </p>
+
+      <div class="buttons">
+        <a href="#services" class="btn primary">
+          میری Services دیکھیں
+        </a>
+
+        <a href="#course" class="btn secondary">
+          AI Course دیکھیں
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+  <section id="services">
+
+    <div class="container">
+
+      <h2 class="section-title">میری Services</h2>
+
+      <p class="section-subtitle">
+        آپ کے Business اور Social Media کے لیے AI Video Solutions
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">🎬</div>
+          <h3>AI Video Creation</h3>
+          <p>
+            AI کی مدد سے cinematic اور professional videos تیار کروائیں۔
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📱</div>
+          <h3>Social Media Videos</h3>
+          <p>
+            TikTok, Facebook, Instagram اور YouTube کے لیے engaging videos۔
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">✨</div>
+          <h3>AI Ads</h3>
+          <p>
+            اپنے business اور products کے لیے AI powered advertisement videos۔
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- COURSE -->
+  <section id="course">
+
+    <div class="container">
+
+      <h2 class="section-title">AI Video Course</h2>
+
+      <p class="section-subtitle">
+        گھر بیٹھے AI Video Creation سیکھیں
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Basic AI Course</h3>
+
+          <div class="price">Rs. 500</div>
+
+          <p>
+            AI Video بنانے کی بنیادی معلومات،
+            prompts اور ضروری AI tools سیکھیں۔
+          </p>
+
+          <br>
+
+          <a href="#contact" class="btn primary">
+            Course Join کریں
+          </a>
+        </div>
+
+
+        <div class="card">
+          <h3>Professional AI Course</h3>
+
+          <div class="price">Rs. 1500</div>
+
+          <p>
+            Professional AI videos، cinematic prompts،
+            editing اور advanced AI tools سیکھیں۔
+          </p>
+
+          <br>
+
+          <a href="#contact" class="btn primary">
+            Course Join کریں
+          </a>
+        </div>
+
+
+        <div class="card">
+          <h3>1-on-1 Training</h3>
+
+          <div class="price">Custom</div>
+
+          <p>
+            Personal training اور AI Video Creation
+            میں step-by-step guidance۔
+          </p>
+
+          <br>
+
+          <a href="#contact" class="btn primary">
+            رابطہ کریں
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+
+    <div class="container">
+
+      <h2 class="section-title">My Portfolio</h2>
+
+      <p class="section-subtitle">
+        میرے AI Video Projects
+      </p>
+
+      <div class="portfolio">
+
+        <div class="portfolio-box">
+          🎥<br>
+          AI Cinematic Video
+        </div>
+
+        <div class="portfolio-box">
+          📱<br>
+          Social Media Advertisement
+        </div>
+
+        <div class="portfolio-box">
+          🤖<br>
+          AI Generated Character
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about">
+
+    <div class="container">
+
+      <div class="about-content">
+
+        <h2 class="section-title">About Me</h2>
+
+        <p>
+          میرا نام Zohaib ہے۔ میں AI Video Creation کے شعبے میں کام کرتا ہوں۔
+          میں AI کی مدد سے مختلف قسم کی videos اور advertisements بناتا ہوں
+          اور لوگوں کو AI Video Creation سکھاتا بھی ہوں۔
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="contact-box">
+
+        <h2 class="section-title">رابطہ کریں</h2>
+
+        <p class="section-subtitle">
+          AI Video بنوانے یا Course join کرنے کے لیے WhatsApp پر رابطہ کریں۔
+        </p>
+
+        <!-- अपना WhatsApp नंबर नीचे बदलें -->
+        <a
+          href="https://wa.me/923XXXXXXXXX"
+          class="btn whatsapp"
+          target="_blank">
+          💬 WhatsApp पर संपर्क करें
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      © 2026 Zohaib AI Studio. All Rights Reserved.
+    </p>
+
+    <p>
+      AI Video Creation • AI Training • Digital Services
+    </p>
+
+  </footer>
+
+
+</body>
+</html>
